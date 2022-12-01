@@ -1,8 +1,9 @@
 import numpy as np
+import itertools as it
 
 # Header #
-test = True
-numpy = True
+test = False
+numpy = False
 if test:
     filename = "test.txt"
 else:
@@ -15,9 +16,20 @@ else:
         data = list(f.readlines())
 
 # Processs #
-res = 0
+cals = []
+total = 0
+for l in data:
+    if l == '\n':
+        cals.append(total)
+        total = 0
+    else:
+        cal = int(l.strip())
+        total += cal
 
-
+res = max(cals)
+cals.sort()
+res2 = sum([cals[-1],cals[-2],cals[-3]])
 
 # Print #
 print(res)
+print(res2)
