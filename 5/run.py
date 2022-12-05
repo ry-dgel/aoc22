@@ -16,8 +16,13 @@ else:
         data = list(f.readlines())
 
 # Processs #
-res = 0
-res2 = 0
+total = 0
+total2 = 0
+
+
+
+res = total
+res2 = total2
 
 # Print #
 print(res)
